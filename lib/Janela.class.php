@@ -2,10 +2,10 @@
 class Janela extends GtkWindow
 {
     private $vbox;
-    protected $bufferr;     // the corresponding text buffer
-    protected $gtksource; // sourceview
-    protected $clipboard;  // clipboard
-    protected $filename;   // filename
+    protected $bufferr;       // the corresponding text buffer
+    protected $gtksource;     // sourceview
+    protected $clipboard;    // clipboard
+    protected $filename;     // filename
 	protected $vieww;       // buffer
     function __construct($w,$h)
     {
@@ -64,10 +64,8 @@ class Janela extends GtkWindow
 
         $label = new GtkLabel('Tab01');
         $ntb = new GtkNotebook;
-        $ntb->append_page(new GtkLabel('This is the first child'),$edit);
         $ntb->append_page($edit, $label);
-   
-        
+        $ntb->append_page($edit, $label);
         $right->add($edit);
         
         $this->gtksourcebufferl->connect('modified-changed',  'on_modified_changed');
